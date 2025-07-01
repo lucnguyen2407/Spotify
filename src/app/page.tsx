@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Home, Search, Plus, Download, Globe, Music } from "lucide-react";
+import { House, Search, Plus, Download, Globe, Music } from "lucide-react";
 import Image from "next/image";
 
 export default function Home() {
@@ -101,7 +101,7 @@ export default function Home() {
             variant="ghost"
             size="icon"
             className="text-white hover:bg-gray-800">
-            <Home className="w-5 h-5" />
+            <House className="w-5 h-5" />
           </Button>
         </div>
 
