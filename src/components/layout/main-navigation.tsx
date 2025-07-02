@@ -2,6 +2,7 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Download, House, Music, Search } from "lucide-react";
+import Link from "next/link";
 
 export default function MainNav() {
   return (
@@ -61,12 +62,15 @@ export default function MainNav() {
           </Button>
           <Button
             variant="link"
-            className="text-gray-300 hover:text-white p-0 h-auto">
-            Sign up
+            className="text-gray-300 hover:text-white p-0 h-auto"
+            asChild>
+            <Link href="/signup">Sign up</Link>
           </Button>
         </div>
-        <Button className="bg-white text-black hover:bg-gray-200 rounded-full px-6">
-          Log in
+        <Button
+          asChild
+          className="bg-white text-black hover:bg-gray-200 rounded-full px-6">
+          <Link href="/login">Log in</Link>
         </Button>
       </div>
     </header>
