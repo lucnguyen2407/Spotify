@@ -1,7 +1,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardNoBorder } from "@/components/ui/card";
+import { CardContent, CardNoBorder } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { popularArtists, trendingSongs } from "@/constants/data";
 import Image from "next/image";
