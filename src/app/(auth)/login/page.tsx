@@ -4,6 +4,7 @@ import { CardContent, CardNoBorder } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
 import { SpotifyLogo } from "@/components/ui/logo";
+import LoginForm from "@/components/auth/login-form";
 
 export default function SpotifyLogin() {
   return (
@@ -12,12 +13,10 @@ export default function SpotifyLogin() {
         <CardContent className="p-4 sm:p-8">
           {/* Spotify Logo */}
           <SpotifyLogo url="/" className="mb-8" />
-
           {/* Title */}
           <h1 className="text-white text-2xl sm:text-3xl font-bold text-center mb-8">
             Log in to Spotify
           </h1>
-
           {/* Social Login Buttons */}
           <div className="space-y-4 mb-8 flex flex-col items-center">
             <Button
@@ -42,46 +41,12 @@ export default function SpotifyLogin() {
               </div>
             </Button>
           </div>
-
           {/* Divider */}
           <div className="relative mb-8 flex justify-center">
             <Separator className="bg-gray-600 w-full sm:!w-[534px]" />
           </div>
-
           {/* Email Form */}
-          <div className="space-y-6 flex flex-col items-center">
-            <div className="w-full sm:w-[324px]">
-              <label
-                htmlFor="email"
-                className="block text-white text-sm font-medium mb-2">
-                Email or username
-              </label>
-              <Input
-                id="email"
-                type="text"
-                placeholder="Email or username"
-                className="w-full h-12 bg-gray-800 border-gray-600 text-white placeholder-gray-400 rounded-md focus:border-white"
-              />
-            </div>
-            <div className="w-full sm:w-[324px]">
-              <label
-                htmlFor="password"
-                className="block text-white text-sm font-medium mb-2">
-                Password
-              </label>
-              <Input
-                id="password"
-                type="password"
-                placeholder="Password"
-                className="w-full h-12 bg-gray-800 border-gray-600 text-white placeholder-gray-400 rounded-md focus:border-white"
-              />
-            </div>
-
-            <Button className="w-full sm:w-[324px] h-12 bg-green-500 hover:bg-green-600 text-black font-semibold rounded-full">
-              Log In
-            </Button>
-          </div>
-
+          <LoginForm />
           {/* Sign up link */}
           <div className="text-center mt-8">
             <p className="text-gray-400">
