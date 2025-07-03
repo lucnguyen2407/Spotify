@@ -1,8 +1,18 @@
 import postgres from 'postgres';
 import { formatCurrency } from './utils';
-import { CustomerField, CustomersTableType, InvoiceForm, InvoicesTable, LatestInvoiceRaw, Revenue } from '@/constants/definitions';
+import { CustomerField, CustomersTableType, InvoiceForm, InvoicesTable, LatestInvoiceRaw, Revenue, User } from '@/constants/definitions';
 
 const sql = postgres(process.env.POSTGRES_URL!, { ssl: 'require' });
+
+export async function getUser(email: string): Promise<User | undefined> {
+    try {
+        const user = await sql<User[]>`SELECT * FROM users WHERE email=${email}`;
+        return user[0];
+    } catch (error) {
+        console.error('Failed to fetch user:', error);
+        throw new Error('Failed to fetch user.');
+    }
+}
 
 export async function fetchRevenue() {
     try {

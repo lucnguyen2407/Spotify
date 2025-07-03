@@ -1,11 +1,18 @@
+import GithubSignIn from "@/components/auth/github-sign-in";
 import LoginForm from "@/components/auth/login-form";
 import { Button } from "@/components/ui/button";
 import { CardContent, CardNoBorder } from "@/components/ui/card";
 import { SpotifyLogo } from "@/components/ui/logo";
 import { Separator } from "@/components/ui/separator";
+import { auth } from "@/lib/auth";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 
-export default function SpotifyLogin() {
+export default async function SpotifyLogin() {
+  const session = await auth();
+  if (session) {
+    redirect("/dashboard");
+  }
   return (
     <div className="min-h-screen bg-[#121212] sm:bg-gradient-to-b sm:from-gray-800 sm:to-black flex items-start justify-center p-4 sm:p-8">
       <CardNoBorder className="w-full max-w-none sm:max-w-[734px] bg-[#121212] rounded-none sm:rounded-xl">
@@ -28,7 +35,6 @@ export default function SpotifyLogin() {
                 Continue with Google
               </div>
             </Button>
-
             <Button
               variant="outline"
               className="w-full sm:w-[324px] h-12 bg-transparent border-gray-600 text-white hover:bg-gray-800 rounded-full">
@@ -39,6 +45,7 @@ export default function SpotifyLogin() {
                 Continue with Facebook
               </div>
             </Button>
+            <GithubSignIn />
           </div>
           {/* Divider */}
           <div className="relative mb-8 flex justify-center">
