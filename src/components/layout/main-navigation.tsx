@@ -1,16 +1,16 @@
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Download, House, Music, Search, Bell } from "lucide-react";
-import Link from "next/link";
-import { SpotifyLogo } from "../ui/logo";
 import {
   DropdownMenu,
-  DropdownMenuTrigger,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
+  DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { Input } from "@/components/ui/input";
+import { Bell, Download, House, Search } from "lucide-react";
+import Link from "next/link";
+import { SpotifyLogo } from "../ui/logo";
 
 export default function MainNav() {
   // TODO: Thay thế bằng logic thực tế kiểm tra đăng nhập

@@ -5,6 +5,7 @@ import { z } from 'zod';
 import bcrypt from 'bcrypt';
 import postgres from 'postgres';
 import { User } from '@/constants/definitions';
+import GoogleProvider from "next-auth/providers/google";
 
 const sql = postgres(process.env.POSTGRES_URL!, { ssl: 'require' });
 
@@ -39,5 +40,9 @@ export const { auth, signIn, signOut } = NextAuth({
                 return null;
             },
         }),
+        GoogleProvider({
+            clientId: process.env.GOOGLE_CLIENT_ID!,
+            clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
+        })
     ],
 });

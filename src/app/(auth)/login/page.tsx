@@ -1,10 +1,9 @@
+import LoginForm from "@/components/auth/login-form";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { CardContent, CardNoBorder } from "@/components/ui/card";
+import { SpotifyLogo } from "@/components/ui/logo";
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
-import { SpotifyLogo } from "@/components/ui/logo";
-import LoginForm from "@/components/auth/login-form";
 
 export default function SpotifyLogin() {
   return (
